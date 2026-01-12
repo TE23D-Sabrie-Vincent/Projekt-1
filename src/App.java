@@ -1,5 +1,8 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        Kund kund = new Kund("Johan");
+        String svar = kund.skapaBeställning(2);
+
+        System.out.println(svar);
     }
 }
