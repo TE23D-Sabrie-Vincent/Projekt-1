@@ -1,14 +1,40 @@
+import java.util.ArrayList;
+
 public class Hem {
 
-    private int antal;
+    protected String namn;
+    protected String adress;
+    protected int pris;
 
-    public Hem(int antal){
-        this.antal = antal;
+    protected ArrayList<Beställning> beställningar;
+
+    public Hem(String namn, String adress, int pris) {
+        this.namn = namn;
+        this.adress = adress;
+        this.pris = pris;
+        this.beställningar = new ArrayList<>();
     }
 
-    public int beräknaHyra() {
-        return antal * 500;
+    public void läggBeställning(String kundNamn, int antal){
+        Beställning beställ = new Beställning(kundNamn, antal);
+        beställningar.add(beställ);
     }
 
-    
+    public int beräknaHyra(){
+        return pris;
+    }
+
+    public String lisaBeställningar(){
+        return "Antal beställningar: " + beställningar.size();
+    }
+
+    // public int getPris() {
+    //     return pris;
+    // }
+
+    // @Override
+    // public int beräknaHyra() {
+    //     return antal * 500;
+    // }
+
 }
