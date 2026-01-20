@@ -3,9 +3,5 @@ public class App {
 
         GUI gui = new GUI();
         gui.start();
-        // Kund kund = new Kund("Johan");
-        // String svar = kund.skapaBeställning(2);
-
-        // System.out.println(svar);
     }
 }

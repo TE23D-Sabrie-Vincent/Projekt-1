@@ -21,16 +21,16 @@ public class Hem {
     }
 
     public int beräknaHyra(){
-        return pris;
+        return 0;
     }
 
     public String lisaBeställningar(){
         return "Antal beställningar: " + beställningar.size();
     }
 
-    // public int getPris() {
-    //     return pris;
-    // }
+    public String getNamn() {
+        return namn;
+    }
 
     // @Override
     // public int beräknaHyra() {

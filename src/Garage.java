@@ -6,4 +6,9 @@ public class Garage extends Hem {
         super(namn, adress, pris);
         this.bilplatser = bilplatser;
     }
+
+    @Override
+    public int beräknaHyra() {
+        return (bilplatser * 1500);
+    }
 }

@@ -9,4 +9,9 @@ public class Lägenhet extends Hem {
         this.våning = våning;
         this.storlek = storlek;
     }
+
+    @Override
+    public int beräknaHyra() {
+        return (storlek * 8 ) + (våning * 200);
+    }
 }

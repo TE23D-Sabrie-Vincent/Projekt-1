@@ -9,5 +9,8 @@ public class Villa extends Hem {
         this.våningar = våningar;
     }
 
-
+    @Override
+    public int beräknaHyra(){
+        return (tomtstorlek * 10) + (våningar * 1000);
+    }
 }

@@ -6,4 +6,9 @@ public class Radhus extends Hem {
         super(namn, adress, pris);
         this.tomt = tomt;
     }
+
+    @Override 
+    public int beräknaHyra(){
+        return 4000 + (tomt * 5);
+    }
 }
