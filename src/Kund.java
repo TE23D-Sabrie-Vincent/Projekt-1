@@ -10,9 +10,9 @@ public class Kund {
         return namn;
     }
 
-    public String skapaBeställning(int antal){
-        GUI gui = new GUI();
-        return gui.läggBeställning(namn, antal);
-    }
+    // public String skapaBeställning(int antal){
+    //     GUI gui = new GUI();
+    //     return gui.läggBeställning(namn, antal);
+    // }
 
 }
