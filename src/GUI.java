@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GUI {
@@ -12,10 +13,16 @@ public class GUI {
 
     private Scanner scanner;
     private Hem hem;
+    private ArrayList<Hem> bostäder;
 
     public GUI() {
         scanner = new Scanner(System.in);
-        hem = new Hem("Ditt hem blah bla blah", "Adress ohohahah", 5000);
+        bostäder = new ArrayList<>();
+
+        bostäder.add(new Villa("Villa i Freed", "Freed Gatan", 1500000, 800, 2));
+        bostäder.add(new Radhus("Radhus eken", "Ekvägen 3", 20000, 40));
+        bostäder.add(new Lägenhet("Lägenhet centrum", "Centrumvägen 18", 40000, 2, 50));
+        bostäder.add(new Garage("Garage Nord", "Industrivägen 2", 10000, 3));
     }
 
     public void start() {
@@ -36,6 +43,7 @@ public class GUI {
 
                     System.out.println("Antal: ");
                     int antal = scanner.nextInt();
+                    scanner.nextLine();
 
                     hem.läggBeställning(namn, antal);
                     System.out.println("Beställning registrerad :D");

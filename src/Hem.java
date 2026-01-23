@@ -32,9 +32,4 @@ public class Hem {
         return namn;
     }
 
-    // @Override
-    // public int beräknaHyra() {
-    //     return antal * 500;
-    // }
-
 }
