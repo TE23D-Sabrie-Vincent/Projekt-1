@@ -12,8 +12,8 @@ public class GUI {
     // }
 
     private Scanner scanner;
-    private Hem hem;
     private ArrayList<Hem> bostäder;
+    private Hem valtHem;
 
     public GUI() {
         scanner = new Scanner(System.in);
@@ -37,7 +37,24 @@ public class GUI {
                 int val = scanner.nextInt();
                 scanner.nextLine();
 
+                // Hem hem = bostäder.get(0);
+
                 if (val == 1) {
+
+                    System.out.println("Välj bostad: ");
+                    for (int i = 0; i < bostäder.size(); i++) {
+                        System.out.println(i + 1 + ". " + bostäder.get(i).getNamn());
+                    }
+                    int bostadsval = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if (bostadsval < 1 || bostadsval > bostäder.size()) {
+                        System.out.println("Ogiltigt val");
+                        return;
+                    }
+
+                    valtHem = bostäder.get(bostadsval - 1);
+
                     System.out.println("kundnamn: ");
                     String namn = scanner.nextLine();
 
@@ -45,11 +62,15 @@ public class GUI {
                     int antal = scanner.nextInt();
                     scanner.nextLine();
 
-                    hem.läggBeställning(namn, antal);
+                    valtHem.läggBeställning(namn, antal);
                     System.out.println("Beställning registrerad :D");
 
                 } else if (val == 2) {
-                    System.out.println(hem.lisaBeställningar());
+                    if (valtHem == null) {
+                        System.out.println("Ingen bostad vald ännu");
+                    } else {
+                        System.out.println(valtHem.listaBeställningar());
+                    }
                 }
 
                 else if (val == 3) {

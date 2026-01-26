@@ -24,7 +24,7 @@ public class Hem {
         return 0;
     }
 
-    public String lisaBeställningar(){
+    public String listaBeställningar(){
         return "Antal beställningar: " + beställningar.size();
     }
 
