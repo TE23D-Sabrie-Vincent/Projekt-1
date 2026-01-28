@@ -11,13 +11,15 @@ public class GUI {
     // ". Total hyra: " + hyra + " kr";
     // }
 
-    private Scanner scanner;
-    private ArrayList<Hem> bostäder;
+    // private Scanner scanner;
+    private Scanner scanner = new Scanner(System.in);
+    private ArrayList<Hem> bostäder = new ArrayList<>();
+    private ArrayList<Beställning> beställningar = new ArrayList<>();
     private Hem valtHem;
 
     public GUI() {
-        scanner = new Scanner(System.in);
-        bostäder = new ArrayList<>();
+        // scanner = new Scanner(System.in);
+        // bostäder = new ArrayList<>();
 
         bostäder.add(new Villa("Villa i Freed", "Freed Gatan", 1500000, 800, 2));
         bostäder.add(new Radhus("Radhus eken", "Ekvägen 3", 20000, 40));
@@ -50,7 +52,7 @@ public class GUI {
 
                     if (bostadsval < 1 || bostadsval > bostäder.size()) {
                         System.out.println("Ogiltigt val");
-                        return;
+                        continue;
                     }
 
                     valtHem = bostäder.get(bostadsval - 1);
@@ -62,14 +64,20 @@ public class GUI {
                     int antal = scanner.nextInt();
                     scanner.nextLine();
 
-                    valtHem.läggBeställning(namn, antal);
+                    Beställning b = new Beställning(namn, valtHem, antal);
+                    beställningar.add(b);
                     System.out.println("Beställning registrerad :D");
 
-                } else if (val == 2) {
-                    if (valtHem == null) {
-                        System.out.println("Ingen bostad vald ännu");
-                    } else {
-                        System.out.println(valtHem.listaBeställningar());
+                } 
+                else if (val == 2) {
+                    if (beställningar.isEmpty()) {
+                        System.out.println("Inga bostad vald ännu");
+                    } 
+                    else 
+                        {
+                        for (Beställning b : beställningar) {
+                            System.out.println(b);
+                        }
                     }
                 }
 
